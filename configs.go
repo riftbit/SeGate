@@ -12,7 +12,9 @@ var (
 	version, build, buildDate string
 )
 
-const ServerName = "SecGW by ErgoZ"
+//DO NOT CHANGE SERVER NAME! IT IS COPYRIGHT!
+const ServerName = "SeGate by ErgoZ (Riftbit)"
+
 const PoweredBy = "Gcode_"
 
 type conf struct {
