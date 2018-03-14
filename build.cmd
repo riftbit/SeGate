@@ -1,4 +1,11 @@
 set CGO_ENABLED=0
 set GOOS=linux
 set GOARCH=amd64
-go build -a -installsuffix cgo -ldflags "-s -w -X 'main.version=1.0.0.1' -X 'main.build=$(git rev-parse --short HEAD)' -X 'main.buildDate=$(date --rfc-3339=seconds)'" ./
+
+FOR /F "tokens=*" %%a in ('git rev-parse --short HEAD') do SET SGBUILD=%%a
+
+set dd=%date:~0,2%
+set mm=%date:~3,2%
+set yyyy=%date:~6,4%
+
+go build -a -installsuffix cgo -ldflags "-s -w -X 'main.version=v1.0.1' -X 'main.build=%SGBUILD%' -X 'main.buildDate=%dd%-%mm%-%yyyy%'" ./
