@@ -1,0 +1,41 @@
+system:
+  maxThreads: 250
+  listenOn: "0.0.0.0:8080"
+
+nodes:
+  - name: "apiOne"
+    url: "https://first.api.server"
+    aesKey: "32 symbol aes key should be placed here"
+
+  - name: "apiTwo"
+    url: "http://second.api.server"
+    aesKey: "32 symbol aes key should be placed here"
+
+clickhouse:
+  connString: "tcp://127.0.0.1:9000?read_timeout=10&write_timeout=20"
+  dbName: "SeGate"
+  isEnabled: true
+
+log:
+  formatter: "text"
+  logLevel: "info"
+  disableColors: false
+  timestampFormat: "2006-01-02T15:04:05.999999999Z07:00"
+
+# Allowed formats
+#ANSIC       = "Mon Jan _2 15:04:05 2006"
+#UnixDate    = "Mon Jan _2 15:04:05 MST 2006"
+#RubyDate    = "Mon Jan 02 15:04:05 -0700 2006"
+#RFC822      = "02 Jan 06 15:04 MST"
+#RFC822Z     = "02 Jan 06 15:04 -0700" // RFC822 with numeric zone
+#RFC850      = "Monday, 02-Jan-06 15:04:05 MST"
+#RFC1123     = "Mon, 02 Jan 2006 15:04:05 MST"
+#RFC1123Z    = "Mon, 02 Jan 2006 15:04:05 -0700" // RFC1123 with numeric zone
+#RFC3339     = "2006-01-02T15:04:05Z07:00"
+#RFC3339Nano = "2006-01-02T15:04:05.999999999Z07:00"
+#Kitchen     = "3:04PM"
+# Handy time stamps.
+#Stamp      = "Jan _2 15:04:05"
+#StampMilli = "Jan _2 15:04:05.000"
+#StampMicro = "Jan _2 15:04:05.000000"
+#StampNano  = "Jan _2 15:04:05.000000000"
